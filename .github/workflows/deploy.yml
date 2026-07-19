@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write # Needed to commit and push the build artifacts to the gh-pages branch
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # Prevents multiple deployments from running concurrently
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies 📦
+        run: npm ci || npm install
+
+      - name: Build Project 🏗️
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # Directory where Vite outputs build files
+          branch: gh-pages # Target branch for GitHub Pages hosting
