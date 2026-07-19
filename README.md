@@ -1,6 +1,8 @@
-# BeamBase - Infrared (IR) Device Code Collector PoC
+# IR Collector - Infrared (IR) Device Code Collector PoC
 
-BeamBase is a modern, responsive, client-side Infrared (IR) Device Code database application. It is designed as a developer utility to aggregate, search, and manage IR commands (buttons and hex codes) in local storage, serving as a frontend proof of concept (PoC) that compiles into a static website compatible with **GitHub Pages**.
+IR Collector is a modern, responsive, client-side Infrared (IR) Device Code database application. It is designed as a developer utility to aggregate, search, and manage IR commands (buttons and hex codes) in local storage, serving as a frontend proof of concept (PoC) that compiles into a static website compatible with **GitHub Pages**.
+
+<img width="2550" height="1516" alt="image" src="https://github.com/user-attachments/assets/ddf7d4c0-bd19-4c8b-9d29-48c2d09c587f" />
 
 ---
 
